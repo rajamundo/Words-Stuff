@@ -1,5 +1,5 @@
-<!doctype html>
-<title>Hello from Flask</title>
+{% extends "base.html" %}
+{% block content %}
 {% if name %}
 	<h1>Welcome to {{ name }}!</h1>
 {% endif %}
@@ -19,3 +19,4 @@
 		<li><h2>{{ meaning }}</h2>
 	{% endfor %}
 {% endif %}
+{% endblock %}
