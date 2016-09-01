@@ -1,0 +1,19 @@
+<!doctype html>
+<title>Hello from Flask</title>
+{% if name %}
+	<h1>Welcome to {{ name }}!</h1>
+{% endif %}
+
+<form action="{{ url_for('add_word') }}" method=post>
+    <dl>
+      <dt> Add the new word:
+      <dd><input type=text name=entry>
+      <dd><input type=submit value=Submit>
+    </dl>
+</form>
+
+{% if definitions %}
+	{% for meaning in definitions %}
+		<li><h2>{{ meaning }}</h2>
+	{% endfor %}
+{% endif %}
