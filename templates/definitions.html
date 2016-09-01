@@ -1,0 +1,7 @@
+<!doctype html>
+ <a href="{{url_for('get_all_words')}}" class="btn btn-primary">Return To Words</a>
+{% if definitions %}
+	{% for meaning in definitions %}
+		<li><h2>{{ meaning.definition }}</h2>
+	{% endfor %}
+{% endif %}

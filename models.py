@@ -4,10 +4,12 @@ from main import db
 class Word(db.Model):
     #id = db.Column(db.Integer, primary_key=True)
     spelling = db.Column(db.String(80), primary_key=True)
+    book = db.Column(db.String(120))
     date = db.Column(db.DateTime)
 
-    def __init__(self, spelling, date):
+    def __init__(self, spelling, book, date):
         self.spelling = spelling
+        self.book = book
         self.date = date
 
     def __repr__(self):

@@ -1,0 +1,28 @@
+<!doctype html>
+<table class ="table table-striped">
+  <thead>
+    <tr>
+      <th> Word </th>
+      <th> Book </th>
+      <th> Date Added </th>
+      <th> Definitions </th>
+
+   </tr>
+  </thead>
+  <tbody>
+  {% for word in words %}
+    <div>
+    <tr>
+      <td> {{word.spelling}} </td>
+      <td> {{word.book}}</td>
+      <td> {% filter upper %} {{ word.date }} {% endfilter %}</td>
+      <td><form action="{{ url_for('get_meanings') }}?id={{ word.spelling }}"  method="GET">
+          <input type="hidden" name="word_spelling" value= {{ word.spelling }} >
+        <button class="btn btn-info">VIEW</button>
+      </form>
+      </td>
+      </tr>
+    </div>
+  {% endfor %}
+  </tbody>
+</table>

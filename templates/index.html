@@ -6,9 +6,11 @@
 
 <form action="{{ url_for('add_word') }}" method=post>
     <dl>
-      <dt> Add the new word:
-      <dd><input type=text name=entry>
-      <dd><input type=submit value=Submit>
+    <label>Word</label>
+    <input type=text name=entry>
+    <label>Book</label>
+    <input type=text name=book>
+    <input type=submit value=Submit>
     </dl>
 </form>
 
