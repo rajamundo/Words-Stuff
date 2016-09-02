@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
-from datetime import date
+from datetime import datetime
 import requests
 
 app = Flask(__name__)
@@ -42,7 +42,7 @@ def add_word():
 			book = request.form['book']
 			print(new_word)
 			definitions = get_definition(new_word)
-			added_word = Word(new_word, book, date.today())
+			added_word = Word(new_word, book, datetime.today())
 			db.session.add(added_word)
 			for entry in definitions:
 				db.session.add(Meanings(new_word, entry))
